@@ -1,0 +1,22 @@
+@model List<ChatGPTApp.Models.ChatMessage>
+
+@if (Model != null && Model.Any())
+{
+    var username = ViewBag.Username as string ?? "User";
+    foreach (var message in Model)
+    {
+        <div class="chat-message @(message.Role == "user" ? "user" : "assistant")">
+            <div class="avatar-container">
+                <img src="~/images/@(message.Role == "user" ? "user-avatar.png" : "assistant-avatar.png")"
+                 alt="@(message.Role == "user" ? username : "FinansAi") Avatar" class="avatar" />
+            </div>
+            <div class="message-bubble">
+                <p><strong>@(message.Role == "user" ? username : "FinansAi"):</strong> @message.Content</p>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>No conversation history available.</p>
+}

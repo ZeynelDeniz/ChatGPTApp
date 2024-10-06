@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "C#: ChatGPTApp [Default Configuration]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\ChatGPTApp.csproj"
+        }
+    ]
+}
